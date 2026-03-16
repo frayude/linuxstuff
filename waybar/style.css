@@ -1,0 +1,120 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: "JetBrains Mono Nerd Font",FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    box-shadow: none;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+/* .modules-left,
+.modules-center,
+.modules-right {
+    margin: 0 20px;
+} */
+
+.modules-left{
+    margin-left: 20px;
+}
+
+/* Modules Left */
+#workspaces button {
+    color: #666666; 
+}
+
+#workspaces button.active {
+    color: #ffffff; 
+}
+
+#taskbar{
+    margin-left: 5px;
+}
+
+#clock,
+#battery,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad
+{
+    padding: 0 10px;
+    color: #ffffff;
+}
+
+#clock{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#custom-power{
+    margin-left: 10px;
+}
+
+tooltip * {
+    font-size: 12.5px;
+}
+
