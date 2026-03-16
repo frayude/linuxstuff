@@ -1,0 +1,69 @@
+* {
+    bg:          rgba(18, 18, 18, 0.8);
+    bg-sel:      #ffffff10;
+    fg:          #eeeeee;
+    fg-alt:      #666666; /* Warna teks deskripsi di kanan */
+    border-color: rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    text-color:       @fg;
+    font:            "JetBrains Mono Nerd Font 11";
+}
+
+window {
+    width:            650px;
+    height:           400px;
+    background-color: @bg;
+    border:           1px;
+    border-color:     @border-color;
+    border-radius:    10px;
+}
+
+mainbox {
+    children: [ inputbar, listview];
+    spacing: 0;
+}
+
+/* --- INPUT --- */
+inputbar {
+    children: [ entry ];
+    padding: 15px 20px;
+    border: 1px;
+}
+
+entry {
+    placeholder: "Search Apps...";
+    placeholder-color: @fg-alt;
+}
+
+/* --- LIST --- */
+listview {
+    padding:      10px;
+    spacing:      0;
+    columns:      1;
+    fixed-height: false;
+    expand:       true; /* INI biar list ngambil ruang sampai ke footer */
+}
+
+element {
+    padding:       12px 16px; /* Tambahin vertikal padding biar enak diklik */
+    spacing:       15px;      /* Jarak antara ikon dan teks */
+    border-radius: 10px;
+}
+
+element-icon {
+    size:            24px;      /* Kecilin dikit biar gak makan tempat */
+    cursor:          inherit;
+    margin:          0 10px 0 0; /* Jarak kanan ikon ke teks */
+}
+
+element-text {
+    cursor:          inherit;
+    highlight:       none;      /* Biar gak ada underline pas diketik */
+}
+
+element selected {
+    background-color: @bg-sel;
+}
+
+
+

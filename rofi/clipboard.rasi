@@ -1,0 +1,10 @@
+/* ~/.config/rofi/clipboard.rasi */
+@theme "~/.config/rofi/raycast.rasi" /* Ambil base-nya dari tema utama */
+
+configuration {
+    show-icons: false; /* Biar fokus ke teks saja */
+}
+
+entry {
+    placeholder: "Search Clipboard History...";
+}

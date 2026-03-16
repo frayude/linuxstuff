@@ -1,0 +1,13 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    icon-theme: "WhiteSur";
+    
+    click-to-exit: true;    
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+    
+}
+
+@theme "~/.config/rofi/raycast.rasi"
