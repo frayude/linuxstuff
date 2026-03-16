@@ -19,6 +19,10 @@ window#waybar {
     margin-left: 20px;
 }
 
+.modules-right{
+    margin-right: 20px;
+}
+
 /* Modules Left */
 #workspaces button {
     color: #666666; 
