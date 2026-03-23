@@ -8,7 +8,6 @@ fi
 
 CURRENT_STATE=$(cat "$STATE_FILE")
 
-# Pake simbol panah macOS (󰬈) atau (⇪)
 if [ "$CURRENT_STATE" == "0" ]; then
     notify-send -t 1200 -h string:x-dunst-stack-tag:caps "Caps Lock: ON"
     echo "1" > "$STATE_FILE"
