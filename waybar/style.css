@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "JetBrains Mono Nerd Font",FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "JetBrains Mono Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
     box-shadow: none;
 }
@@ -9,18 +9,12 @@ window#waybar {
     background-color: transparent;
 }
 
-/* .modules-left,
-.modules-center,
-.modules-right {
-    margin: 0 20px;
-} */
-
 .modules-left{
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .modules-right{
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 /* Modules Left */
@@ -121,4 +115,3 @@ label:focus {
 tooltip * {
     font-size: 12.5px;
 }
-
