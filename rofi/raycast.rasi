@@ -42,6 +42,15 @@ listview {
     columns:      1;
     fixed-height: false;
     expand:       true; /* INI biar list ngambil ruang sampai ke footer */
+    scrollbar:   true;
+}
+
+scrollbar {
+    border:       0;
+    handle-width: 4px;          /* Lebar handle (bagian yang digeser) */
+    handle-color: @fg-alt;      /* Pake warna fg-alt biar gak terlalu terang */
+    padding:      0;
+    margin:       0 0 0 5px;    /* Jarak antara list dan scrollbar */
 }
 
 element {
