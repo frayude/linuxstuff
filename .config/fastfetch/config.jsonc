@@ -1,0 +1,42 @@
+{
+  "$schema": "https://raw.githubusercontent.com/fastfetch-cli/fastfetch/dev/doc/json_schema.json",
+  "modules": [
+    "title",
+
+    { "type": "custom",       "format": "── System ──────────────"              },
+    { "type": "os",           "key": "  OS"                                     },
+    { "type": "kernel",       "key": "  Kernel"                                 },
+    { "type": "uptime",       "key": "  Uptime"                                 },
+    { "type": "packages",     "key": "  Packages"                               },
+    { "type": "shell",        "key": "  Shell"                                  },
+    { "type": "custom",       "format": " "                                     },
+
+    { "type": "custom",       "format": "── Desktop ─────────────"              },
+    { "type": "display",      "key": "  Display"                                },
+    { "type": "wm",           "key": "  WM"                                     },
+    { "type": "theme",        "key": "  Theme"                                  },
+    { "type": "icons",        "key": "  Icons"                                  },
+    { "type": "font",         "key": "  Font"                                   },
+    { "type": "cursor",       "key": "  Cursor"                                 },
+    { "type": "terminal",     "key": "  Terminal"                               },
+    { "type": "terminalFont", "key": "  Term Font"                              },
+    { "type": "custom",       "format": " "                                     },
+
+    { "type": "custom",       "format": "── Hardware ────────────"              },
+    { "type": "host",         "key": "  Host"                                   },
+    { "type": "cpu",          "key": "  CPU"                                    },
+    { "type": "gpu",          "key": "  GPU"                                    },
+    { "type": "memory",       "key": "  RAM"                                    },
+    { "type": "swap",         "key": "  Swap"                                   },
+    { "type": "disk",         "key": "  Disk"                                   },
+    { "type": "battery",      "key": "  Battery"                                },
+    { "type": "custom",       "format": " "                                     },
+
+    { "type": "custom",       "format": "── Network ─────────────"              },
+    { "type": "localIP",      "key": "  Local IP"                               },
+    { "type": "locale",       "key": "  Locale"                                 },
+    { "type": "custom",       "format": " "                                     },
+
+    "colors"
+  ]
+}

@@ -1,0 +1,18 @@
+[5cf04442-ad05-4c76-9237-82d4af3e80fb]
+Description=Settings for brave-browser
+desktops=068a9491-84f5-4395-a1c8-43ef6fcc4a57
+desktopsrule=3
+maxsizerule=2
+wmclass=brave-browser
+wmclassmatch=1
+
+[73bb85a4-2098-449e-b48f-fbe4b50acb30]
+Description=Settings for code
+desktops=86f263ff-0882-43be-b19d-bd9c32e863e9
+desktopsrule=3
+wmclass=code
+wmclassmatch=1
+
+[General]
+count=2
+rules=5cf04442-ad05-4c76-9237-82d4af3e80fb,73bb85a4-2098-449e-b48f-fbe4b50acb30

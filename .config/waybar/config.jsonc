@@ -1,0 +1,153 @@
+// -*- mode: jsonc -*-
+{
+    "modules-left": [
+      "hyprland/workspaces",
+      "wlr/taskbar"
+    ],
+    "modules-center":[
+        "clock"
+    ],
+    "modules-right": [
+      "backlight",
+      "bluetooth",
+      "network",
+      "pulseaudio",
+      "battery",
+      "tray",
+      "custom/power"
+    ],
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "icon-theme": "Numix-Circle", // Sesuaikan dengan nama icon theme lu
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "app_ids-mapping": {
+            "firefox-esr": "firefox"
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "format": "{:%a %b %d %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon}",
+    "format-icons": [
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_1</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_2</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_3</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_4</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_5</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_6</span>",
+      "<span size='13pt' font='Material Symbols Outlined'>brightness_7</span>"
+    ],
+    // If you want to use scroll to change brightness, comment the following lines
+    // "on-scroll-up": "",
+    // "on-scroll-down": "",
+    // And Uncomment the following lines
+    "reverse-scrolling": true,
+    "smooth-scrolling-threshold": 1,
+    "tooltip": true,
+    "tooltip-format": "{percent}%",
+    "on-scroll-up": "brightnessctl set 1%+ && ~/.config/hypr/scripts/brightness-osd.sh",
+    "on-scroll-down": "brightnessctl set 1%- && ~/.config/hypr/scripts/brightness-osd.sh"
+    },
+     "battery": {
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10,
+      "plugordie": 5
+    },
+    "format": "{icon}",
+    "format-icons": [
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_0</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_1</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_2</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_3</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_4</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_5</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_6</span>",
+      "<span size='15pt' font='Material Symbols Outlined'>battery_android_full</span>"
+    ],
+    "format-charging": "<span size='15pt' font='Material Symbols Outlined'>battery_android_bolt</span>",
+    "format-plugged": "<span size='15pt' font='Material Symbols Outlined'>bolt</span>",
+    "format-plugordie": "<span size='15pt' font='Material Symbols Outlined'>battery_android_alert</span>",
+    "tooltip": true,
+    "tooltip-format": "Charge: {capacity}%"
+  },  
+  "bluetooth": {
+    "interval": 5,
+    "format-on": "<span size='14pt' font='Material Symbols Outlined'>bluetooth</span>",
+    "format-off": "",
+    "format-disabled": "",
+    "format-connected": "<span size='14pt' font='Material Symbols Outlined'>bluetooth_connected</span>",
+    "tooltip": true,
+    "tooltip-format": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias} {device_battery_percentage}%",
+    "on-click": "blueman-manager",
+    "on-click-right": "rfkill toggle bluetooth"
+  },
+    "network": {
+    "format-icons": {
+      "wifi": [
+        "<span size='13pt' font='Material Symbols Outlined'>android_wifi_1_bar</span>",
+        "<span size='13pt' font='Material Symbols Outlined'>android_wifi_2_bar</span>",
+        "<span size='13pt' font='Material Symbols Outlined'>android_wifi_3_bar</span>",
+        "<span size='13pt' font='Material Symbols Outlined'>android_wifi_4_bar</span>"
+      ],
+      "ethernet": "<span size='13pt' font='Material Symbols Outlined'>lan</span>",
+      "disabled": "<span size='13pt' font='Material Symbols Outlined'>wifi_off</span>",
+      "disconnected": "<span size='13pt' font='Material Symbols Outlined'>android_wifi_4_bar_alert</span>"
+    },
+    "format-wifi": "{icon}",
+    "format-ethernet": "{icon}",
+    "format-disconnected": "{icon}",
+    "format-disabled": "{icon}",
+    "interval": 5,
+    "tooltip-format": "{essid}\t{gwaddr}",
+    "on-click": "nmgui",
+    "tooltip": true,
+    "max-length": 20
+  },
+"pulseaudio": {
+    "scroll-step": "1",
+    "format": "{icon}",
+    "format-muted": "<span size='14pt' font='Material Symbols Outlined'>volume_off</span>",
+    "format-icons": {
+      "headphone": "<span size='14pt' font='Material Symbols Outlined'>headphones</span>",
+      // For my Airpods (find your device name with `pactl list sinks`)
+      "bluez_output.70_AE_D5_BA_99_AB.1": "<span size='13pt' font='Material Symbols Outlined'>earbuds_2</span>",
+      "hands-free": "<span size='14pt' font='Material Symbols Outlined'>headset_mic</span>",
+      "headset": "<span size='14pt' font='Material Symbols Outlined'>headphones</span>",
+      "headset-muted": "<span size='14pt' font='Material Symbols Outlined'>headset_off</span>",
+      "default": [
+        "<span size='14pt' font='Material Symbols Outlined'>volume_mute</span>",
+        "<span size='14pt' font='Material Symbols Outlined'>volume_down</span>",
+        "<span size='14pt' font='Material Symbols Outlined'>volume_up</span>"
+      ]
+    },
+    "tooltip-format": "Volume: {volume}%\n{desc}",
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ && ~/.config/hypr/scripts/volume-osd.sh",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- && ~/.config/hypr/scripts/volume-osd.sh"
+},
+"custom/power": {
+    "format": "<span size='13pt' font='Material Symbols Outlined'>power_settings_new</span>",
+    "on-click": "wlogout",
+    "tooltip": false
+}
+}
